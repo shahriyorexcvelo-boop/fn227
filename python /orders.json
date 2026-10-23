@@ -1,0 +1,27 @@
+[
+  {
+    "ism": "Ali",
+    "mahsulotlar": [
+      {"nomi": "Noutbuk", "narxi": 5000000, "soni": 1},
+      {"nomi": "Sichqoncha", "narxi": 100000, "soni": 2}
+    ]
+  },
+  {
+    "ism": "Vali",
+    "mahsulotlar": [
+      {"nomi": "Telefon", "narxi": 3000000, "soni": 1},
+      {"nomi": "Gilof (Chexol)", "narxi": 50000, "soni": 3}
+    ]
+  },
+  {
+    "ism": "Sardor",
+    "mahsulotlar": [
+      {"nomi": "Naushnik", "narxi": 200000, "soni": 1}
+    ]
+  }
+
+]
+
+
+
+

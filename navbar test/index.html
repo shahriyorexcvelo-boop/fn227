@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Liquid Glass Navbar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Apple uslubidagi rangli fluid/liquid sharlar (orqa fondagi harakatlanuvchi nur uchun) -->
+  <div class="liquid-blob blob-1"></div>
+  <div class="liquid-blob blob-2"></div>
+  <div class="liquid-blob blob-3"></div>
+
+  <!-- Apple Style Liquid Glass Navbar -->
+  <nav class="liquid-navbar">
+    
+    <!-- Logo -->
+    <div class="nav-logo">
+      <div class="logo-badge">
+        <i data-lucide="graduation-cap"></i>
+      </div>
+      <span class="logo-text">EduPlatform</span>
+    </div>
+
+    <!-- Menyu -->
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="#courses" class="nav-item">
+          Kurslar 
+          <i data-lucide="chevron-down" class="arrow"></i>
+        </a>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+          <a href="#math" class="dropdown-item">
+            <div class="item-icon math-bg"><i data-lucide="calculator"></i></div>
+            <div>
+              <strong>Matematika</strong>
+              <p>Algebra, Geometriya, Rasch model</p>
+            </div>
+          </a>
+          <a href="#physics" class="dropdown-item">
+            <div class="item-icon physics-bg"><i data-lucide="atom"></i></div>
+            <div>
+              <strong>Fizika</strong>
+              <p>Mexanika, Amaliy testlar</p>
+            </div>
+          </a>
+          <a href="#tech" class="dropdown-item">
+            <div class="item-icon tech-bg"><i data-lucide="code-2"></i></div>
+            <div>
+              <strong>Dasturlash</strong>
+              <p>Python, Web dev, Algoritmlar</p>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li><a href="#tests" class="nav-item">Testlar & Baholash</a></li>
+      <li><a href="#pricing" class="nav-item">Tariflar</a></li>
+    </ul>
+
+    <!-- O'ng taraf: Qidiruv va Profil -->
+    <div class="nav-actions">
+      <!-- Search Input -->
+      <div class="search-box">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" placeholder="Qidiruv..." />
+      </div>
+
+      <!-- Notification -->
+      <button class="icon-btn" title="Bildirishnomalar">
+        <i data-lucide="bell"></i>
+        <span class="badge"></span>
+      </button>
+
+      <!-- Apple style Login Button -->
+      <button class="login-btn">
+        <i data-lucide="user"></i>
+        <span>Kabinet</span>
+      </button>
+    </div>
+
+  </nav>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

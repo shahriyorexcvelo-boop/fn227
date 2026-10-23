@@ -1,0 +1,32 @@
+[
+  {
+    "nomi": "Pepperoni",
+    "turi": "Pizza",
+    "narxi": 75000
+  },
+  {
+    "nomi": "Margarita",
+    "turi": "Pizza",
+    "narxi": 55000
+  },
+  {
+    "nomi": "Osh (Palov)",
+    "turi": "Milliy taom",
+    "narxi": 35000
+  },
+  {
+    "nomi": "Gavayya Pizzasi",
+    "turi": "Pizza",
+    "narxi": 80000
+  },
+  {
+    "nomi": "Manti",
+    "turi": "Milliy taom",
+    "narxi": 8000
+  },
+  {
+    "nomi": "Koka-Kola 1.5L",
+    "turi": "Ichimlik",
+    "narxi": 12000
+  }
+]

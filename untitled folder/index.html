@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPlatform - Kelajak Ta'limi</title>
+  <!-- Lucide ikonkalari uchun -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Umumiy sozlamalar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #f5f5f7;
+      color: #1d1d1f;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Apple Liquid Blobs (Orqa fondagi suyuq rangli nurlar) */
+    .liquid-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      z-index: 0;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .blob-1 { top: -50px; left: 15%; width: 450px; height: 350px; background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+    .blob-2 { top: 150px; right: 10%; width: 400px; height: 300px; background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); }
+    .blob-3 { top: 600px; left: 20%; width: 500px; height: 400px; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+
+    /* NAVBAR */
+    .liquid-navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1100px;
+      padding: 8px 20px;
+      
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(30px) saturate(210%);
+      -webkit-backdrop-filter: blur(30px) saturate(210%);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 99px;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #0071e3, #42a5f5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      font-size: 16px;
+      color: #1d1d1f;
+      letter-spacing: -0.4px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .nav-item {
+      color: #515154;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-item:hover {
+      color: #1d1d1f;
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .login-btn {
+      background: #0071e3;
+      border: none;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .login-btn:hover {
+      background: #0077ed;
+      transform: scale(1.02);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 160px auto 80px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(0, 113, 227, 0.1);
+      color: #0071e3;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      color: #1d1d1f;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #515154;
+      max-width: 650px;
+      margin: 0 auto 30px auto;
+      line-height: 1.5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      background: #1d1d1f;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover { transform: scale(1.03); }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      color: #1d1d1f;
+      padding: 12px 24px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      border: 1px solid rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .btn-secondary:hover { transform: scale(1.03); background: #fff; }
+
+    /* COURSES SECTION */
+    .courses-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto 100px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .course-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .math-icon { background: #e8f2ff; color: #0071e3; }
+    .physics-icon { background: #e6f9f0; color: #34c759; }
+    .tech-icon { background: #fff4e5; color: #ff9500; }
+
+    .course-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .course-card p {
+      font-size: 14px;
+      color: #515154;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .course-link {
+      color: #0071e3;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 20px;
+      color: #86868b;
+      font-size: 13px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Orqa fondagi suyuq ranglar -->
+  <div class="liquid-blob blob-1"></div>
+  <div class="liquid-blob blob-2"></div>
+  <div class="liquid-blob blob-3"></div>
+
+  <!-- Navbar -->
+  <nav class="liquid-navbar">
+    <div class="nav-logo">
+      <div class="logo-badge">
+        <i data-lucide="graduation-cap" style="width:18px; height:18px;"></i>
+      </div>
+      <span class="logo-text">EduPlatform</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#courses" class="nav-item">Kurslar</a></li>
+      <li><a href="#features" class="nav-item">Testlar</a></li>
+      <li><a href="#pricing" class="nav-item">Tariflar</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="login-btn">Kirish</button>
+    </div>
+  </nav>
+
+  <!-- Hero Bo'limi -->
+  <section class="hero">
+    <span class="hero-tag">Yangi avlod ta'lim platformasi</span>
+    <h1>Bilimlaringizni zamonaviy uslubda oshiring</h1>
+    <p>Matematika, fizika va zamonaviy dasturlash darslarini ilg'or texnologiyalar va interaktiv testlar yordamida o'rganing.</p>
+    <div class="hero-buttons">
+      <a href="#courses" class="btn-primary">Kurslarni ko'rish</a>
+      <a href="#demo" class="btn-secondary">Sinov darsi</a>
+    </div>
+  </section>
+
+  <!-- Kurslar Grid -->
+  <section id="courses" class="courses-container">
+    <h2 class="section-title">Ommabop yo'nalishlar</h2>
+    <div class="courses-grid">
+      
+      <!-- Card 1 -->
+      <div class="course-card">
+        <div class="card-icon math-icon">
+          <i data-lucide="calculator"></i>
+        </div>
+        <h3>Matematika va Rasch Testlar</h3>
+        <p>Algebra, geometriya va bilimlarni aniq baholash uchun zamonaviy psixometrik test tizimlari.</p>
+        <a href="#" class="course-link">Batafsil &rarr;</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="course-card">
+        <div class="card-icon physics-icon">
+          <i data-lucide="atom"></i>
+        </div>
+        <h3>Fizika va Mexanika</h3>
+        <p>Tabiat qonunlarini amaliy masalalar va qiziqarli tajribalar orqali chuqur o'rganing.</p>
+        <a href="#" class="course-link">Batafsil &rarr;</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="course-card">
+        <div class="card-icon tech-icon">
+          <i data-lucide="code-2"></i>
+        </div>
+        <h3>Dasturlash va Web</h3>
+        <p>Python, JavaScript va zamonaviy veb ilovalar yaratishni noldan professional darajagacha o'rganing.</p>
+        <a href="#" class="course-link">Batafsil &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 EduPlatform. Barcha huquqlar himoyalangan. Apple Liquid Glass uslubida yaratildi.</p>
+  </footer>
+
+  <!-- İkonkalarni faollashtirish -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

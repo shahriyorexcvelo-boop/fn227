@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Ali Valiyev",
+    "courses": ["Python", "JavaScript"]
+  },
+  {
+    "id": 2,
+    "name": "Sardor Karimov",
+    "courses": ["Java", "C++"]
+  },
+  {
+    "id": 3,
+    "name": "Madina Umarova",
+    "courses": ["Python", "Data Science"]
+  },
+  {
+    "id": 4,
+    "name": "Jasur Hasanov",
+    "courses": ["JavaScript", "HTML/CSS"]
+  },
+  {
+    "id": 5,
+    "name": "Malika Aliyeva",
+    "courses": ["Python", "SQL"]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "city": "Tashkent",
+    "temperature": 28,
+    "condition": "Sunny"
+  },
+  {
+    "city": "Samarkand",
+    "temperature": 25,
+    "condition": "Partly Cloudy"
+  },
+  {
+    "city": "Andijan",
+    "temperature": 22,
+    "condition": "Rainy"
+  },
+  {
+    "city": "Nukus",
+    "temperature": 18,
+    "condition": "Windy"
+  },
+  {
+    "city": "Bukhara",
+    "temperature": 32,
+    "condition": "Hot"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 101,
+    "from": "Tashkent",
+    "to": "Istanbul",
+    "price": 350,
+    "available_seats": 12
+  },
+  {
+    "id": 102,
+    "from": "Samarkand",
+    "to": "Moscow",
+    "price": 280,
+    "available_seats": 5
+  },
+  {
+    "id": 103,
+    "from": "Tashkent",
+    "to": "Dubai",
+    "price": 420,
+    "available_seats": 20
+  },
+  {
+    "id": 104,
+    "from": "Bukhara",
+    "to": "Tashkent",
+    "price": 60,
+    "available_seats": 15
+  },
+  {
+    "id": 105,
+    "from": "Tashkent",
+    "to": "Almaty",
+    "price": 150,
+    "available_seats": 8
+  }
+]

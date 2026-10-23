@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&amp;display=swap');
+      .brand-title {
+        font-family: 'Fredoka One', 'Arial Black', sans-serif;
+        font-size: 42px;
+        fill: #FFFFFF;
+        text-anchor: middle;
+        font-weight: 900;
+        letter-spacing: 2px;
+      }
+      .brand-sub {
+        font-family: 'Fredoka One', 'Arial Black', sans-serif;
+        font-size: 20px;
+        fill: #FFCC00;
+        text-anchor: middle;
+        letter-spacing: 6px;
+      }
+    </style>
+    <filter id="drop-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Orqa fon doirasi -->
+  <circle cx="250" cy="250" r="230" fill="#E63946" filter="url(#drop-shadow)"/>
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#FFCC00" stroke-width="6" stroke-dasharray="12 8"/>
+
+  <!-- IT BOSHI ELEMENTLARI -->
+  <g id="dog-head">
+    <!-- Quloqlar -->
+    <path d="M 140 140 C 110 130 90 200 125 245 C 145 230 155 180 140 140 Z" fill="#8B4513" stroke="#2B1704" stroke-width="5"/>
+    <path d="M 360 140 C 390 130 410 200 375 245 C 355 230 345 180 360 140 Z" fill="#8B4513" stroke="#2B1704" stroke-width="5"/>
+    <path d="M 135 155 C 120 155 110 200 130 225" fill="#D2691E"/>
+    <path d="M 365 155 C 380 155 390 200 370 225" fill="#D2691E"/>
+
+    <!-- Asosiy bosh -->
+    <ellipse cx="250" cy="195" rx="105" ry="90" fill="#F4A261" stroke="#2B1704" stroke-width="6"/>
+
+    <!-- Peshona dog'i -->
+    <path d="M 235 108 C 245 140 255 140 265 108 Z" fill="#FFFFFF" opacity="0.8"/>
+
+    <!-- Ko'zlar -->
+    <!-- Chap ko'z -->
+    <ellipse cx="205" cy="180" rx="14" ry="17" fill="#2B1704"/>
+    <circle cx="201" cy="174" r="5" fill="#FFFFFF"/>
+    <circle cx="210" cy="184" r="2" fill="#FFFFFF"/>
+    <!-- Qoshlar -->
+    <path d="M 195 155 Q 205 150 215 156" stroke="#2B1704" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- O'ng ko'z -->
+    <ellipse cx="295" cy="180" rx="14" ry="17" fill="#2B1704"/>
+    <circle cx="291" cy="174" r="5" fill="#FFFFFF"/>
+    <circle cx="300" cy="184" r="2" fill="#FFFFFF"/>
+    <!-- Qoshlar -->
+    <path d="M 305 155 Q 295 150 285 156" stroke="#2B1704" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- Tumshuq / Oq yuz qismi -->
+    <ellipse cx="250" cy="215" rx="46" ry="32" fill="#FFFFFF"/>
+    <!-- Burun -->
+    <path d="M 238 200 C 242 195 258 195 262 200 C 265 208 255 218 250 218 C 245 218 235 208 238 200 Z" fill="#2B1704"/>
+    <ellipse cx="246" cy="201" rx="3" ry="1.5" fill="#FFFFFF"/>
+    
+    <!-- Yonoqlar (qizarish) -->
+    <ellipse cx="175" cy="205" rx="10" ry="6" fill="#E76F51" opacity="0.5"/>
+    <ellipse cx="325" cy="205" rx="10" ry="6" fill="#E76F51" opacity="0.5"/>
+  </g>
+
+  <!-- PITSA BO'LAGI -->
+  <g id="pizza-slice" filter="url(#drop-shadow)">
+    <!-- Pitsa korji (orqa tomon) -->
+    <path d="M 200 240 Q 250 250 300 240 L 250 340 Z" fill="#E9C46A" stroke="#2B1704" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Pishloq qatlami -->
+    <path d="M 206 247 Q 250 256 294 247 L 250 330 Z" fill="#FFC300"/>
+    
+    <!-- Pitsa borti (qalin xamir) -->
+    <path d="M 196 238 Q 250 252 304 238 Q 308 248 296 252 Q 250 262 204 252 Q 192 248 196 238 Z" fill="#DDA15E" stroke="#2B1704" stroke-width="4"/>
+
+    <!-- Pepperoni kolbasalari -->
+    <circle cx="236" cy="270" r="11" fill="#C1121F" stroke="#780000" stroke-width="2"/>
+    <circle cx="265" cy="280" r="10" fill="#C1121F" stroke="#780000" stroke-width="2"/>
+    <circle cx="250" cy="305" r="7" fill="#C1121F" stroke="#780000" stroke-width="2"/>
+
+    <!-- Ko'katlar (oregano/zaytun sepmasi) -->
+    <circle cx="250" cy="265" r="2.5" fill="#2D6A4F"/>
+    <circle cx="225" cy="285" r="2" fill="#2D6A4F"/>
+    <circle cx="270" cy="262" r="2.5" fill="#2D6A4F"/>
+    <circle cx="242" cy="292" r="2" fill="#2D6A4F"/>
+
+    <!-- Cho'ziluvchan pishloq tomchilari -->
+    <path d="M 248 335 C 246 348 254 348 252 335" fill="#FFC300" stroke="#2B1704" stroke-width="2"/>
+  </g>
+
+  <!-- BREND MATNI (BANNER QISMI) -->
+  <g id="brand-text">
+    <!-- Matn orqa foni lentasi -->
+    <rect x="75" y="375" width="350" height="75" rx="20" fill="#2B1704" stroke="#FFCC00" stroke-width="4" filter="url(#drop-shadow)"/>
+    
+    <!-- Matnlar -->
+    <text x="250" y="418" class="brand-title">DOGGO</text>
+    <text x="250" y="440" class="brand-sub">PIZZA</text>
+  </g>
+</svg>
+

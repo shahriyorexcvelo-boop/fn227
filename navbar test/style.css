@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f5f5f7; /* Apple classic light gray background */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow-x: hidden;
+  color: #1d1d1f;
+}
+
+/* Apple Liquid Blobs (Orqa fondagi suyuq ranglar) */
+.liquid-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.blob-1 {
+  top: -50px;
+  left: 25%;
+  width: 400px;
+  height: 300px;
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.blob-2 {
+  top: 20px;
+  right: 25%;
+  width: 350px;
+  height: 250px;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.blob-3 {
+  top: 100px;
+  left: 40%;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+/* APPLE LIQUID GLASS NAVBAR */
+.liquid-navbar {
+  position: fixed;
+  top: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+  max-width: 1100px;
+  padding: 8px 16px;
+  
+  /* Oq shaffof shisha va o'ta yumshoq blur */
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(30px) saturate(210%);
+  -webkit-backdrop-filter: blur(30px) saturate(210%);
+  
+  /* Apple shisha qirralari va nur effekti */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 99px;
+  
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.05),
+    0 20px 25px -5px rgba(0, 0, 0, 0.03),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.liquid-navbar:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 15px 35px -5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding-left: 6px;
+}
+
+.logo-badge {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, #0071e3, #42a5f5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 113, 227, 0.25);
+}
+
+.logo-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1d1d1f;
+  letter-spacing: -0.4px;
+}
+
+/* Menyu */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-item {
+  color: #515154;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #1d1d1f;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.arrow {
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+  transition: transform 0.25s ease;
+}
+
+/* Dropdown Menu (Ochiluvchi shaffof oyna) */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 12px;
+  width: 290px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  padding: 10px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+  
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.98);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #1d1d1f;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.item-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.math-bg { background: #e8f2ff; color: #0071e3; }
+.physics-bg { background: #e6f9f0; color: #34c759; }
+.tech-bg { background: #fff4e5; color: #ff9500; }
+
+.dropdown-item strong {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+}
+
+.dropdown-item p {
+  font-size: 11px;
+  color: #86868b;
+  margin-top: 1px;
+}
+
+/* Qidiruv Paneli */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  border-radius: 20px;
+  padding: 6px 12px;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.search-box:focus-within {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 113, 227, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.search-icon {
+  width: 14px;
+  height: 14px;
+  color: #86868b;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #1d1d1f;
+  font-size: 12px;
+  width: 120px;
+}
+
+.search-box input::placeholder {
+  color: #86868b;
+}
+
+/* Action Tugmalar */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  position: relative;
+  background: rgba(0, 0, 0, 0.04);
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #515154;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #1d1d1f;
+}
+
+.badge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  background-color: #ff3b30; /* Apple Red */
+  border-radius: 50%;
+}
+
+/* Apple Style Primary Button */
+.login-btn {
+  background: #0071e3; /* Apple Accent Blue */
+  border: none;
+  color: #ffffff;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.login-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.login-btn:hover {
+  background: #0077ed;
+  box-shadow: 0 6px 16px rgba(0, 113, 227, 0.35);
+  transform: scale(1.02);
+}
+
+.login-btn:active {
+  transform: scale(0.97);
+}
